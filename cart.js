@@ -1,33 +1,48 @@
-//console.log("julius wasajja");
-var items = ["soap", "sugar", "kettle", "bedsheet", "soda", "milk"];
+class item {
+  constructor(name, qty, price) {
+    this.name = name;
+    this.qty = qty;
+    this.price = price;
+  }
 
-//display items in the car
-for (let i = 0; i < items.length; i++) {
-  console.log(items[i]);
+  cartinfo() {
+    console.log(
+      "You have added " +
+        this.qty +
+        " " +
+        this.name +
+        " item to the cart with each costing shs. " +
+        this.price +
+        " and your TOTAL for this item is UGX" +
+        this.qty * this.price +
+        " THANK YOU"
+    );
+  }
 }
 
-//console.log(items[4]);
-items.pop(); //removes the last added item
-items.push("motorola"); // adds item into cart (bottm/last)
-items.unshift("kabiriti"); // adds item at into cart (top)
-//items[0] = "laptops";// replaces "item" in index 0 position
+//adding items to the cart
 
-// phones.push(phones[3] = "lg", "panasonic");
+let shoes = new item("clarks", 2, 23000);
+let book = new item("learn js", 4, 45000);
+let pc = new item("imac", 3, 33000);
 
-// console.log(phones);
+shoes.cartinfo();
+//book.cartinfo();
 
-/* var phones = ["tecno", "iphone", "nokia", "samsung", "google_pixel", "itel"];
+var cart = [shoes, book];
+cart.push(pc);
+//cart.pop();
+//cart.unshift();
+var total = 0;
 
-for (let item = 0; item <= phones.length; item++) {
-
-    console.log(phones[item]);
+//display items in the cart
+for (let i = 0; i < cart.length; i++) {
+  console.log(cart[i]);
 }
 
-//another way of looping through the array
-
-for (let item of phones) {
-
-    console.log(item);
-
-
-}*/
+//getting total
+for (let i = 0; i < cart.length; i++) {
+  //console.log(cart[i].price);
+  total += cart[i].price * cart[i].qty;
+}
+console.log("YOUR TOTAL FOR THIS CART IS UGX:" + total);
