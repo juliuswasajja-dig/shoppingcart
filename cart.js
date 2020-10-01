@@ -30,7 +30,11 @@ shoes.cartinfo();
 //book.cartinfo();
 
 var cart = [shoes, book];
+//add item to the cart array
 cart.push(pc);
+
+//remove the item from the cart
+
 //cart.pop();
 //cart.unshift();
 var total = 0;
@@ -39,10 +43,19 @@ var total = 0;
 for (let i = 0; i < cart.length; i++) {
   console.log(cart[i]);
 }
+//total number of items in the cart
+console.log("You have a total of " + cart.length + " items in the cart");
 
-//getting total
+//getting total AMOUNT OF MONEY
 for (let i = 0; i < cart.length; i++) {
   //console.log(cart[i].price);
   total += cart[i].price * cart[i].qty;
 }
 console.log("YOUR TOTAL FOR THIS CART IS UGX:" + total);
+//check out
+console.log("Your can proceed to the checkout");
+//payment method
+console.log(
+  "What payment method would you prefer, VOUCHER, CASH ON DELIVERY or MOBILE MONEY"
+);
+//
